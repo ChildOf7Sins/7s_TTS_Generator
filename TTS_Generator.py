@@ -89,7 +89,7 @@ def main():
         # Get filename and extension
         file_name, file_extension = os.path.splitext(uploaded_file.name)
 
-        text = uploaded_file.read().decode("utf-8")
+        text = uploaded_file.read().decode("utf-8", errors="replace")
 
         st.header("Original Text (First 500 Characters):")
         st.write(text[:500] + ("..." if len(text) > 500 else ""))
